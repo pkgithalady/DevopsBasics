@@ -20,3 +20,16 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
+- task: ApwideGoliveSendEnvironmentInfos@2
+  inputs:
+    serviceConnection: 'apwide.atlassian.net'
+    targetEnvironmentName: 'S&P SIT'
+    deploymentVersionName: 'SP 1.0'
+    deploymentBuildNumber: '$(Build.BuildNumber)'
+    deploymentDeployedDate: '2023-09-24T12:00:00Z'
+    deploymentAttributes: |
+      ✅ Job #$(Build.BuildId) - $(Build.DefinitionName)
+      Requested by: $(Build.RequestedFor)
+      Branch: $(Build.SourceBranchName)
+    deploymentIssueKeys: 'SP-3412,SP-6783'
+    environmentStatusName: 'Prov'
