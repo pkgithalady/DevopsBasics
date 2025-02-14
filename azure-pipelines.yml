@@ -28,4 +28,3 @@ steps:
     deploymentBuildNumber: '$(Build.BuildNumber)'
     deploymentDeployedDate: '2023-09-24T12:00:00Z'
     deploymentIssueKeys: 'SP-3412,SP-6783'
-    environmentStatusName: 'Prov'
